@@ -11,6 +11,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { StringFormatPipe } from './string-format.pipe';
 import { TitleCasePipe } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,12 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TransferHttpCacheModule
   ],
   providers: [TitleCasePipe],
   bootstrap: [AppComponent]

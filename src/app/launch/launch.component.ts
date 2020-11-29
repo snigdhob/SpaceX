@@ -16,7 +16,7 @@ export class LaunchComponent extends BaseComponent implements OnInit, AfterViewI
 
   launchData: Launch[];
   notifier = new Subject()
-  initialLoad: boolean = false;
+  initialLoad: boolean = true;
 
   constructor(private route: ActivatedRoute, private spaceXService: SpaceXService, private router: Router,
     private reloadService: ReloadService) {
@@ -32,7 +32,7 @@ export class LaunchComponent extends BaseComponent implements OnInit, AfterViewI
         queryString = `&${urlPartition[1]}`;
       }
       this.getLaunchData(queryString);
-      if (!this.initialLoad) { //Retain filters if page is reloaded
+      if (this.initialLoad) { //Retain filters if page is reloaded
         this.reloadService.onPageReload.emit(params);
         this.initialLoad = false;
       }
@@ -46,14 +46,17 @@ export class LaunchComponent extends BaseComponent implements OnInit, AfterViewI
     /*
     Show spinner on initial page load. 
     Code written in ngAfterViewInit because the view isn't rendered yet when the get service is called in ngOnInit.
-    */
+    
     if (!this.launchData) {
       this.showSpinner('launchSpinner');
     }
+    */
   }
 
   getLaunchData(params: string) {
-    this.showSpinner('launchSpinner');
+    if (!this.initialLoad) {
+      this.showSpinner('launchSpinner');
+    } 
     this.spaceXService.getLaunches(params)
       .pipe(takeUntil(this.notifier))
       .subscribe(
