@@ -1,0 +1,25 @@
+.filter-div {
+    background-color: white;
+    .filter-category {
+        border-bottom: 1px solid darkgrey;
+    }
+}
+
+#title {
+    color: black;
+}
+
+label.btn.active.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+label.btn.focus.btn-secondary,
+label.btn.focus.btn-success {
+    box-shadow: none;
+}
+
+label.btn.btn-success.active {
+    background-color: #28a745;
+    border-color: #28a745;
+}

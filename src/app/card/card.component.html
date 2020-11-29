@@ -1,0 +1,36 @@
+<!-- Common card component to populate the launch data -->
+<div id="main-div" class="container p-2">
+    <div class="horizontal-flex-center mb-2">
+        <img [src]="launchDetails?.links?.mission_patch_small" class="img-fluid" alt="{{launchDetails.mission_name}} #{{launchDetails.flight_number}}">
+    </div>
+
+    <div class="card-body vertical-flex-space-evenly">
+        <h5>{{launchDetails?.mission_name}} #{{launchDetails?.flight_number}}</h5>
+
+        <p>
+            <b>Mission Ids:</b>
+            <ng-container *ngIf="launchDetails.mission_id?.length > 0;else noMissionIds">
+                <br>
+                <ul>
+                    <li *ngFor="let item of launchDetails.mission_id">
+                        {{ item }}
+                    </li>
+                </ul>
+            </ng-container>
+            <ng-template #noMissionIds>&nbsp;N/A</ng-template>
+        </p>
+
+        <p>
+            <b>Launch Year:</b> {{ launchDetails?.launch_year }}
+        </p>
+
+        <p>
+            <b>Successful Launch:</b> {{ launchDetails?.launch_success | stringFormat }}
+        </p>
+
+        <p>
+            <b>Successful Landing:</b> {{ launchDetails?.rocket?.first_stage?.cores[0]?.land_success | stringFormat }}
+        </p>
+    </div>
+
+</div>

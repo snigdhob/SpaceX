@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <app-spinner name="launchSpinner" show='y'></app-spinner>
+    <ng-container *ngIf="launchData?.length > 0; else noRecordsFound">
+        <div class="row">
+            <ng-container *ngFor="let item of launchData">
+                <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
+                    <app-card [launchDetails]="item"></app-card>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+    <ng-template #noRecordsFound>
+        <div class="horizontal-flex-center" *ngIf="launchData != null">
+            <img src="../../assets/no-results.png">
+        </div>
+    </ng-template>
+
+</div>
