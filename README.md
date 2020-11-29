@@ -92,11 +92,11 @@ Brief overview of components used-
 
 ### Mobile: ###
 
-![ScreenShot](/Lighthouse_Mobile.jpg)
+![picture alt](https://github.com/waynebourne/SpaceX/blob/master/Lighthouse_Mobile.JPG "Lighthouse Score Mobile")
 
 ### Desktop: ###
 
-![ScreenShot](/Lighthouse_Desktop.jpg)
+![picture alt](https://github.com/waynebourne/SpaceX/blob/master/Lighthouse_Desktop.JPG "Lighthouse Score Desktop")
 
 
 
