@@ -2,18 +2,18 @@
     "name": "space-x",
     "version": "0.0.0",
     "scripts": {
-        "start:heroku": "node dist/server",
-        "postinstall": "npm run build:ssr",
         "ng": "ng",
-        "start": "node dist/server",
-        "build": "ng build --prod",
+        "start": "ng serve",
+        "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
         "dev:ssr": "ng run SpaceX:serve-ssr",
         "serve:ssr": "node dist/SpaceX/server/main.js",
         "build:ssr": "ng build --prod && ng run SpaceX:server:production",
-        "prerender": "ng run SpaceX:prerender"
+        "prerender": "ng run SpaceX:prerender",
+        "postinstall": "npm run build:ssr",
+        "start:heroku": "node dist/SpaceX/server/main.js"
     },
     "private": true,
     "dependencies": {
