@@ -32,7 +32,7 @@ This is a front-end application which would help users list and browse all launc
 
 ## Working Link
 
-[Named Link](https://spacex-trial.herokuapp.com/ "SpaceX")
+[Named Link](https://spacex-trial.herokuapp.com/ "SpaceX") and https://spacex-trial.herokuapp.com/
 
 ## Tech Stack
 
